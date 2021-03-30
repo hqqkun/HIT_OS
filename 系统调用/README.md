@@ -351,7 +351,7 @@ movl %eax,%ebx
 | :---------------: | :--: | :----------: |
 |    描述符索引     | *TI* |    *RPL*     |
 
-`TI` 为表指示标志（Table Index），若 `TI = 0` ，则从 `GDT` 表查找表项，若 `TI = 1` ，则从 `IDT` 表查找表项。
+`TI` 为表指示标志（Table Index），若 `TI = 0` ，则从 `GDT` 表查找表项，若 `TI = 1` ，则从 `LDT` 表查找表项。
 
 `RPL` 为请求特权级（Requested Privilege Level），`0` 表示权限最高，`3` 表示权限最低。
 
