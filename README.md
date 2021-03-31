@@ -44,7 +44,7 @@ sudo ./mount-hdc
 2）卸载
 
 ```shell
-sudo ./umount hdc
+sudo umount hdc
 ```
 
 
