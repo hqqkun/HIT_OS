@@ -261,7 +261,7 @@ who.s who.o:who.c ../include/linux/kernel.h ../include/unistd.h
 这两个文件为给用户提供的系统调用，运行在用户态。
 
 ```c
-/* iam.c */
+/* 在 hdc/usr/root/iam.c */  
 #define __LIBRARY__
 #include<unistd.h>
 
@@ -278,7 +278,8 @@ int main(int argc,char* argv[])
   
 
 ```c
-/* whoami.c */
+/* 在 hdc/usr/root/whoami.c */
+
 #include<stdio.h>
 #define __LIBRARY__
 #include<unistd.h>
