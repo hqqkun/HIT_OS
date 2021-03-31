@@ -288,7 +288,6 @@ _syscall2(int,whoami,char*,name,unsigned int, size)
 
 int main(int argv,char* argc[])
 {
-    iam(argv[1]);
     char name[30];
     int re_value = whoami(name,30);
     if(re_value != -1 )
