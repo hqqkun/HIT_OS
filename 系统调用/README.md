@@ -288,11 +288,12 @@ _syscall2(int,whoami,char*,name,unsigned int, size)
 
 int main(int argv,char* argc[])
 {
-	char name[30];
-	int re_value = whoami(name,30);
-	if(re_value != -1 )
-		printf("%s\n",name);
-   	 return 0;
+    iam(argv[1]);
+    char name[30];
+    int re_value = whoami(name,30);
+    if(re_value != -1 )
+    	printf("%s\n",name);
+    return 0;
 }
 ```
 
