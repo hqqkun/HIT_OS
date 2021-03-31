@@ -6,6 +6,7 @@
 
 ```c
 /* 在 include/linux/sched.h 中定义 */
+
 #define TASK_RUNNING		0
 #define TASK_INTERRUPTIBLE	1
 #define TASK_UNINTERRUPTIBLE	2
