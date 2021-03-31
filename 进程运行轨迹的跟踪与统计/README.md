@@ -7,11 +7,11 @@
 ```c
 /* 在 include/linux/sched.h 中定义 */
 
-#define TASK_RUNNING			        0
-#define TASK_INTERRUPTIBLE		    1
-#define TASK_UNINTERRUPTIBLE	    2
-#define TASK_ZOMBIE				        3
-#define TASK_STOPPED			        4
+#define TASK_RUNNING		0
+#define TASK_INTERRUPTIBLE	1
+#define TASK_UNINTERRUPTIBLE	2
+#define TASK_ZOMBIE		3
+#define TASK_STOPPED		4
 ```
 
 |        进程状态        |       含义       |                             注释                             |
