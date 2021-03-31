@@ -25,13 +25,13 @@
 
 /* 凡用到 unistd.h 及其内部的系统调用的 .c 文件都应包含:
  * #define __LIBRARY__
- * #include<unistd.h>	 
+ * #include <unistd.h>	 
  */
 #ifdef __LIBRARY__
 	...
 #endif
 
-/* 仅展示三变量代码，其余详见源文件 */
+/* 仅展示三变量系统调用代码，其余详见源文件 */
 #define _syscall0(type,name)
 #define _syscall1(type,name,atype,a)
 #define _syscall2(type,name,atype,a,btype,b)
@@ -70,21 +70,26 @@ return -1; \
 system_call:
 	cmpl $nr_system_calls-1,%eax
 	ja bad_sys_call
+	
 	/* 保存用户段寄存器 ds, es, fs */
 	push %ds
 	push %es
 	push %fs
+	
 	/* 向系统调用内核函数传递参数 a,b,c */
 	pushl %edx
 	pushl %ecx		
 	pushl %ebx		
+	
 	/* 将 ds, es 指向内核数据空间 */
 	movl $0x10,%edx	
 	mov %dx,%ds
 	mov %dx,%es
+	
 	/* 将 fs 指向用户数据空间 */
 	movl $0x17,%edx
 	mov %dx,%fs
+	
 	/* 执行 int 0x80 的子服务程序 */
 	// sys_call_table + %eax * 4 
 	call sys_call_table(,%eax,4)
@@ -211,7 +216,8 @@ int sys_whoami(char* name, unsigned int size)
 
 ```c
 /* 在 include/unistd.h 合适位置添加 */
-...
+
+/* …… */
 #define __NR_iam	72
 #define __NR_whoami	73
 
@@ -223,7 +229,8 @@ int whoami(char*name,unsigned int size);
 
 ```c
 /* 在 include/linux/sys.h 合适位置添加 */
-...
+
+/* …… */
 extern int sys_iam();
 extern int sys_whoami();
 
@@ -264,7 +271,7 @@ who.s who.o:who.c ../include/linux/kernel.h ../include/unistd.h
 /* 在 hdc/usr/root/iam.c */
 
 #define __LIBRARY__
-#include<unistd.h>
+#include <unistd.h>
 
 /* 将字符串 name 拷贝到内核中保存下来 */
 _syscall1(int,iam,const char*,name)
