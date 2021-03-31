@@ -77,7 +77,7 @@ system_call:
 	mov %dx,%fs
 	
 	/* 执行 int 0x80 的子服务程序 */
-	// sys_call_table + %eax * 4 
+	/* sys_call_table + %eax * 4 */
 	call sys_call_table(,%eax,4)
 ```
 
