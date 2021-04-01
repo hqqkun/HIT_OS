@@ -1,3 +1,7 @@
+https://github.com/hqqkun/HIT_OS/blob/main/Resources/%E8%AF%BE%E4%BB%B6/README.md
+
+
+
 
 
 
@@ -6,7 +10,7 @@
 
 哈尔滨工业大学，李治军老师操作系统实验环境及相关 Lab 答案与解析。
 
-## 课程平台
+课程平台
 
 1）教学平台
 
@@ -22,8 +26,6 @@
 - [x] 系统调用
 - [x] 进程运行轨迹的跟踪与统计
 - [ ] 基于内核栈切换的进程切换
-
-
 
 ## 实验环境搭建
 
@@ -96,6 +98,12 @@ sudo ./mount-hdc
 ```shell
 sudo umount hdc
 ```
+
+
+
+## 如果对汇编不是很了解
+
+时间充裕的同学建议看一下王爽《汇编语言》，时间不充裕的同学可以看一下 [8086 汇编快速教程](https://github.com/hqqkun/HIT_OS/blob/main/Resources/%E8%AF%BE%E4%BB%B6/README.md)
 
 
 
