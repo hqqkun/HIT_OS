@@ -37,7 +37,7 @@ return -1; \
 }
 ```
 
-  系统调用实则为 `int 0x80` 的中断。分析上文内嵌汇编 代码，可得下表，同时 `%eax` 也保存返回值：
+  系统调用实则为 `int 0x80` 的中断。分析上文内嵌汇编代码，可得下表，同时 `%eax` 也保存返回值：
 
 | 寄存器 |                   值                    |
 | :----: | :-------------------------------------: |
@@ -113,7 +113,7 @@ int whoami(char* name, unsigned int size);
 实现 `who.c` 功能所需的库函数：
 
 ```c
-/* 在 linux/kernel.h */
+/* 在 include/linux/kernel.h */
 
 /* 内核使用 printk，作用与 printf 一样 */
 int printk(const char * fmt, ...)
