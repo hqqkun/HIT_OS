@@ -1,11 +1,3 @@
-https://github.com/hqqkun/HIT_OS/blob/main/Resources/%E8%AF%BE%E4%BB%B6/README.md
-
-
-
-
-
-
-
 # Linux 0.11 Labs
 
 哈尔滨工业大学，李治军老师操作系统实验环境及相关 Lab 答案与解析。
