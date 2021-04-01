@@ -53,7 +53,7 @@ sudo dpkg -i *.deb      # 安装所有包
 2）安装依赖库
 
 ```shell
-sudo apt install bin86				# 用以下载 8086 编译器和链接器 as86 和 ld86 
+sudo apt install bin86			# 用以下载 8086 编译器和链接器 as86 和 ld86 
 sudo apt install libc6-dev-i386		# 下载 32 位兼容库
 sudo apt install libsm6:i386		# 以下三项为 bochs 依赖库
 sudo apt install libx11-6:i386
