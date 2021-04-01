@@ -1,14 +1,16 @@
-
-
-
-
 ## Linux 0.11 Labs
 
 哈尔滨工业大学，李治军老师操作系统实验环境及相关 Lab 答案与解析。
 
-## 课程实验平台
+## 课程平台
 
-[操作系统原理与实践_Linux - 蓝桥云课 (lanqiao.cn)](https://www.lanqiao.cn/courses/115)
+1）教学平台
+
+[中国大学 MOOC ](https://www.icourse163.org/course/HIT-1002531008)
+
+2）实验平台
+
+[操作系统原理与实践_Linux](https://www.lanqiao.cn/courses/115)
 
 ## 实验进度
 
@@ -22,7 +24,7 @@
 ## 编译并运行 Linux 0.11
 
 假设已进入 `oslab` 文件夹。  
-以下均为 shell 命令行。
+		以下均为 shell 命令行。
 
 ```shell
 cd ./linux-0.11
@@ -31,11 +33,11 @@ make
 ../run
 ```
 
-## 载入或卸载虚拟磁盘 `hdc`
+## 加载或卸载虚拟磁盘 `hdc`
 
 假设已进入 `oslab` 文件夹。
 
-1）载入
+1）加载
 
 ```shell
 sudo ./mount-hdc
@@ -46,7 +48,4 @@ sudo ./mount-hdc
 ```shell
 sudo umount hdc
 ```
-
-
-
 
