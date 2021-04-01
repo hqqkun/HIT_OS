@@ -14,7 +14,7 @@
 
 2）实验平台
 
-[操作系统原理与实践_Linux](https://www.lanqiao.cn/courses/115)
+[操作系统原理与实践 Linux](https://www.lanqiao.cn/courses/115)
 
 ## 实验进度
 
