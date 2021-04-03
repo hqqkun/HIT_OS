@@ -10,7 +10,12 @@
 
 2）实验平台
 
-[操作系统原理与实践 Linux](https://www.lanqiao.cn/courses/115)
+[操作系统原理与实践 Linux](https://www.lanqiao.cn/courses/115)  
+
+课件资源  
+  
+  
+[Lecture PDF](https://github.com/hqqkun/HIT_OS/tree/main/Resources/%E8%AF%BE%E4%BB%B6)
 
 ## 实验进度
 
