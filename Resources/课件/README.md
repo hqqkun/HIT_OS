@@ -90,9 +90,9 @@ FR（Flag Register），也是 16 位。它在 32 位体系中通常称作 `efla
 ```assembly
 /* 8086 Intel 写法都是 A 为目的操作数，与 AT&T 相反 */
 /* 表示数据从 B（寄存器或立即数） 移入 A */
-	mov A,B
+	mov A, B
 /* 表示数据从 ss:bp（主存单元） 移入 A */
-	mov A,[bp]
+	mov A, [bp]
 ```
 
 若用 `R` 表示寄存器（`Register`），`M` 表示主存（`Memory`），`I` 表示立即数（`Immediate`）。则实际有 4 种可能：
@@ -117,7 +117,7 @@ FR（Flag Register），也是 16 位。它在 32 位体系中通常称作 `efla
 
 ```assembly
 /* 假设变量 temp 被编译器优化，放到寄存器 dx */
-	mov dx,6
+	mov dx, 6
 ```
 
 ***
@@ -136,8 +136,8 @@ FR（Flag Register），也是 16 位。它在 32 位体系中通常称作 `efla
 	push ax
 	
 	/* 等价于 */
-	add sp,-4
-	mov ss:[sp],ax
+	add sp, -4
+	mov ss:[sp], ax
 ```
 
 同理：
@@ -146,8 +146,8 @@ FR（Flag Register），也是 16 位。它在 32 位体系中通常称作 `efla
 	pop ax
 	
 	/* 等价于 */
-	mov ax,ss:[sp]
-	add sp,4
+	mov ax, ss:[sp]
+	add sp, 4
 ```
 
 ***
@@ -163,7 +163,7 @@ FR（Flag Register），也是 16 位。它在 32 位体系中通常称作 `efla
 上段代码可编译为 `loop` 语句：
 
 ```assembly
-	mov cx,4
+	mov cx, 4
 foo:
 	/* …… */
 	loop foo
@@ -259,7 +259,7 @@ int foo(int x,int y,int z)
 
 foo:
 	/* …… */
-	mov ax,0
+	mov ax, 0
 	ret
 ```
 
@@ -300,8 +300,8 @@ foo:
 | 读取光标位置 | AH = 0x03  | BH = 页号 | AX = 0，CH = 光标开始行，CL = 光标结束行，DH = 行，DL=列 |
 
 ```assembly
-	mov	ah,3		! 读取光标位置
-	xor	bh,bh		! 异或运算，将 bh 清零
+	mov	ah, 3		! 读取光标位置
+	xor	bh, bh		! 异或运算，将 bh 清零
 	int	0x10
 ```
 
@@ -329,8 +329,8 @@ foo:
 	push ip
 
 	/* 3）形成入口地址，为什么乘 4 ，是因为每个向量占 4B，具体请看上方表格 */
-	mov ip,n * 4
-	mov cs,n * 4 + 2
+	mov ip, n * 4
+	mov cs, n * 4 + 2
 ```
 
 ***
@@ -397,14 +397,14 @@ swap:
 swap:
 	! 省略 push，与上段代码一致，这里只考虑 mov
 
-	mov bx,4[bp]		! bx = x
-	mov si,6[bp]		! si = y
-	mov ax,ss:[bx]		! ax = *x
+	mov bx, 4[bp]		! bx = x
+	mov si, 6[bp]		! si = y
+	mov ax, ss:[bx]		! ax = *x
 
-	mov cx,ss:[si]		
-	mov ss:[bx],cx		! *x = *y
+	mov cx, ss:[si]		
+	mov ss:[bx], cx		! *x = *y
 	
-	mov ss:[si],ax		! *y = ax
+	mov ss:[si], ax		! *y = ax
 	
 	! 省略 pop 
 	ret
@@ -439,23 +439,23 @@ main:
 	push dx
 	
 	push bp
-	mov bp,sp
-	add sp,-4
+	mov bp, sp
+	add sp, -4
 	
-	mov -2[bp],1	! x = 1
-	mov -4[bp],2	! y = 2
+	mov -2[bp], 1	! x = 1
+	mov -4[bp], 2	! y = 2
 	
-	lea dx,-4[bp]	! 向 swap() 传递参数
+	lea dx, -4[bp]	! 向 swap() 传递参数
 	push dx	        ! 若向函数传递指针，则使用 lea 指令，这里不再说明其用法
-	lea dx,-2[bp]
+	lea dx, -2[bp]
 	push dx
 	call swap
 	
-	add sp,8
+	add sp, 8
 	pop bp
 	pop dx
 	
-	mov ax,0
+	mov ax, 0
 	ret
 ```
 
